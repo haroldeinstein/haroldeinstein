@@ -1,0 +1,58 @@
+@mixin calc($perc, $px) {
+  height: -webkit-calc(#{$perc} - #{$px});
+     height: -moz-calc(#{$perc} - #{$px});
+       height: -o-calc(#{$perc} - #{$px});
+          height: calc(#{$perc} - #{$px});
+}
+
+#main-container {
+  @include calc(100%, 81px);
+}
+
+#admin-bar {
+  height: 6.0em;
+  width: 100%;
+  border-bottom: 0.1em solid rgba(255, 243, 42, 0.55);;
+  margin-bottom: 2.0em;
+  line-height: 5.0em;
+  background: rgba(255, 243, 42, 0.5);
+  position: relative;
+  z-index: 2;
+
+  #save-button, #add-action {
+    display: block;
+    text-align: center;
+    float: right;
+    margin-left: 8px;
+    margin-top: 8px;
+  }
+  #save-button {
+    margin-right: 14px;
+  }
+}
+
+.new-director {
+  height: 4.0em;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+
+  h3 {
+    color: #999
+  }
+  .add {
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: absolute;
+    top: 0px;
+    left: -30px;
+  }
+  input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+

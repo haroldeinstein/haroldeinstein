@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HAROLD EINSTEIN</title>
+  <meta name="keywords" content="Harold Einstein, Howard Einstein, Director Harold Einstein, Crest commercials, FedEx commercials, Little Caesars Commercials, Kayak Commercials, Axe Commercials, Johnnie Walker Commercials, Boston Bruins Commercials, Gushers Commercials, Target Commercials, Mike's Hard Lemonade commercials, Luvs commercials, Award-winning commercials, Famous commercials">
+
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= stylesheet_link_tag "admin", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5252500-4']);
+    _gaq.push(['_setDomainName', 'haroldeinstein.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+</head>
+<body class="<%= "#{current_controller}-#{current_action}" %>">
+
+<% flash.each do |type, msg| %>
+  <%= content_tag :p, msg, class: "flash #{type}" %>
+<% end %>
+
+<% unless @editable == "false" %>
+  <div id="admin-bar">
+    <button class="btn disabled" id="save-button">save changes</button>
+    <button class="btn positive" id="add-action"><%= @add_action %></a>
+  </div>
+<% end %>
+
+<div id="main-container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

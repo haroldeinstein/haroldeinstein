@@ -1,0 +1,81 @@
+@import "../mixins/animate.scss";
+@import "../mixins/box-shadow-helper.scss";
+
+@mixin btn-color($btn: #000, $text: #fff) {
+  background-color: $btn;
+  color: $text;
+
+  &:hover {
+    background-color: darken($btn, 5%);
+    color: darken($text, 10%);
+  };
+  &:active {
+    background-color: darken($btn, 10%);
+    color: darken($text, 20%);
+  };
+}
+
+.btn {
+  background: #333;
+  height: 2.4em;
+  color: #fff;
+  font-size: 1.9em;
+  font-weight: 500;
+  border: 0px;
+  line-height: 2.5em;
+  padding: 0px 30px;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+
+  &:hover {
+    background: #3e3e3e;
+    @include transition-duration;
+  }
+  &:active {
+    background: #fff;
+    @include transition-duration(0.1s)
+  }
+
+  &.positive {
+    @include btn-color(black, #fff);
+  }
+  &.active {
+    @include btn-color(#278ced);
+  }
+  &.negative {
+    @include btn-color(red);
+  }
+  &.neutral {
+    @include btn-color(rgba(68,68,68,0.8));
+    color: #fff;
+  }
+  &.disabled {
+    @include btn-color(rgba(48, 48, 48, 0.3), rgba(48, 48, 48, 0.6));
+    &:hover {
+      background: rgba(48, 48, 48, 0.3);
+      color: rgba(48, 48, 48, 0.6);
+    }
+    &:active {
+      background: rgba(48, 48, 48, 0.3);
+      color: rgba(48, 48, 48, 0.6);
+    }
+  }
+}
+
+.back {
+  height: 52px;
+  width: 52px;
+  background-image: url('back.png');
+}
+
+.welcome-index .back {
+  display: none;
+}
+
+@media screen and (max-width: 320px) {
+  .back {
+    display: none;
+  }
+}
