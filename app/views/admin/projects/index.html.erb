@@ -1,0 +1,60 @@
+<%= content_for :stylesheets do %>
+  <%= stylesheet_link_tag :projects %>
+<% end  %>
+
+<div id="video-options">
+</div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" height="90%">
+  <tbody>
+    <tr>
+      <td valign="middle">
+        <div id="director" class="clearfix">
+
+          <div id="videos-list-container">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+              <tbody>
+                <tr>
+                  <td valign="middle">
+                    <div id="videos-list">
+                      <% @projects.each do |p| %>
+                        <div style="position: relative;" class="video-title" id="p_<%= p.vimeo_id %>">
+                          <h3 class="project"><%= p.title %></h3>
+                          <a href="#" class="reorder-video" data-id="<%= p.vimeo_id %>"></a>
+                          <a href="#" class="remove-video" data-id="<%= p.vimeo_id %>"></a>
+                        </div>
+                      <% end %>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="videos-container">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+              <tbody>
+                <tr>
+                  <td valign="middle">
+                    <div id="video-player-container">
+                      <div id="videos" style="background-image: url(<%= @projects.first.try(:thumbnail_large) %>);"></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  var Bootstrap = {};
+  Bootstrap.username = "haroldeinstein";
+</script>
+
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag :directors_admin %>
+<% end %>
+

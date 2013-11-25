@@ -1,0 +1,140 @@
+
+@import "../mixins/animate.scss";
+@import "../uikit/fonts.scss";
+
+.admin-director #main-container {
+  max-width: 113.0em;
+}
+
+#director {
+  @include transition-duration(0.2s);
+
+  &.open {
+    @include transform(translate3d(10px, 0px, 0px), scale(0.8));
+  }
+}
+
+#videos-list-container {
+  width: 30%;
+  height: 100%;
+  padding-bottom: 8px;
+  float: left;
+  text-align: center;
+
+  a {
+    color: #fdb5af;
+    text-decoration: underline;
+  }
+
+  h3 {
+    padding: 6px 0px;
+    text-transform: lowercase;
+  }
+}
+
+#videos-list {
+  width: 100% !important;
+  height: auto !important;
+}
+
+#video-player-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 56.7%;
+  position: relative;
+}
+
+#videos {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+}
+
+.video {
+  box-sizing: border-box;
+  @include transition-duration(0.2s);
+
+  &.selected {
+    border-left: 6px solid rgba(255, 243, 42, 1);
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.video-title {
+  position: relative;
+
+  .remove-video {
+    width: 2.4em;
+    height: 2.4em;
+    margin-top: 0.7em;
+    position: absolute;
+    display: block;
+    top: 0em;
+    right: 0em;
+    display: none;
+    background-image: url('directors/delete.png');
+  }
+
+  .reorder-video {
+    @extend .remove-video;
+    right: 2.4em;
+    background-image: url('directors/move.png');
+  }
+
+  &:hover .remove-video {
+    display: block;
+  }
+}
+
+input.edit-title {
+  text-align: center;
+  text-transform: lowercase;
+  font-size: 2.2em;
+  font-weight: 600;
+  padding-left: 0em;
+  margin: 0px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  outline: 0;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 1px;
+}
+
+#video-options {
+  width: 250px;
+  height: 100%;
+  overflow-y: scroll;
+  position: absolute;
+  left: -270px;
+  top: 0px;
+  padding-right: 2.0em;
+  @include transition-duration(0.2s);
+  z-index: 2;
+
+  &.open {
+    @include transform(translate3d(270px, 0px, 0px));
+  }
+}
+
+#overlay {
+  opacity: 0;
+  @include transition-duration(0.2s);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+
+  &.open {
+    opacity: 1;
+  }
+}

@@ -5,6 +5,8 @@ Harold::Application.routes.draw do
   resources 'underwear', only: ['index']
 
   namespace 'admin' do
+    get 'commercials/fetch', to: 'projects#fetch'
     resources 'projects', path: 'commercials'
+
   end
 end
