@@ -10,7 +10,6 @@ VimeoManager.prototype = {
     var obj = {
       title: v.title,
       video_url: v.url,
-      director_id: Bootstrap.director_id,
       vimeo_id: v.id,
       id: v.id,
       thumbnail_small: v.thumbnail_small,
