@@ -1,0 +1,115 @@
+var loader_interval;
+var maxPreloaderWidth;
+var pw;
+var preloadTime;
+var preloadStepTime;
+var stepWidth;
+var imagesLoaded = 0;
+
+var imageArray = [
+  "<%= image_path "commercials_b_off.png" %>",
+  "<%= image_path "commercials_b_on.png" %>",
+  "<%= image_path "underwear_b_off.png" %>",
+  "<%= image_path "underwear_b_on.png" %>",
+  "<%= image_path "contact_off.jpg" %>",
+  "<%= image_path "contact_on.jpg" %>",
+  "<%= image_path "underwear.jpg" %>"]
+
+$(document).ready(function() {
+
+  checkForiPhone();
+
+  setTimeout(function() {
+    $('#loading_outer').fadeOut(function() {
+      $(this).hide();
+    });
+  }, 500)
+  /*
+  maxPreloaderWidth = $("#loading_inner").width();
+  pw = 0;
+  preloadTime = 2000;
+  preloadStepTime = 10;
+  stepWidth = maxPreloaderWidth / (preloadTime / preloadStepTime);
+
+  initPreloader();
+  */
+
+});
+
+function checkForiPhone()
+{
+  if((navigator.userAgent.match(/iPhone/i)) /* || (navigator.userAgent.match(/iPod/i)) */ ) {
+     window.location = "http://www.haroldeinstein.com/m";
+  }
+}
+
+function initPreloader() {
+
+  for (var i = 0; i < imageArray.length; i++)
+  {
+    var img = new Image();
+    img.src = imageArray[i];
+    img.onload = function() { imageLoaded(); }
+  }
+
+  setTimeout(function()
+  {
+    checkForPreload();
+  }
+  , 500
+  );
+}
+
+function checkForPreload()
+{
+
+  if (imagesLoaded == imageArray.length) skipPreloader(); //if all the images are loaded and we don't need to show the preloader
+  else doPreloader();
+}
+
+function imageLoaded()
+{
+  imagesLoaded++;
+}
+
+function skipPreloader()
+{
+  hidePreloader();
+  $('#main').css('display', 'none');
+  $('#main').fadeIn(500);
+}
+
+function doPreloader()
+{
+  $('#loading_bar').css('display', 'none');
+  $('#main').css('display', 'none');
+  $('#loading_bar').fadeIn(1000);
+
+  loader_interval = setInterval(function() { animatePreloader() }, 10);
+}
+
+function animatePreloader() {
+
+  $('#loading_bar').css('width', pw += stepWidth);
+  if(pw >= maxPreloaderWidth) {
+    clearInterval(loader_interval);
+    $('#loading_bar').fadeOut(500,
+      function() {
+        hidePreloader();
+        $('#main').fadeIn(500);
+      }
+    );
+  }
+}
+
+function hidePreloader() {
+  $('#loading_outer').hide();
+}
+
+function showEmail(){
+  $('#contact_inner_text').css('display', 'inline');
+}
+
+function hideEmail() {
+  $('#contact_inner_text').css('display', 'none');
+}

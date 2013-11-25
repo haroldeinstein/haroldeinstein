@@ -5,6 +5,10 @@ body {
   font-family: Arial;
 }
 
+.hidden-images img {
+  display: none;
+}
+
 div#main {
   position: absolute;
   margin: 0px;
@@ -58,11 +62,11 @@ div#commercials_link {
   width: 280px;
   margin: -25px 0px 0px 0px;
   cursor:pointer;
-  background-image: url('images/commercials_b_off.png');
+  background-image: url(image_path('commercials_b_off.png'));
 }
 
 div#commercials_link:hover {
-  background-image: url('images/commercials_b_on.png');
+  background-image: url(image_path('commercials_b_on.png'));
 }
 
 div#underwear_link {
@@ -73,11 +77,11 @@ div#underwear_link {
   width: 280px;
   margin: -25px 0px 0px 0px;
   cursor:pointer;
-  background-image: url('images/underwear_b_off.png');
+  background-image: url(image_path('underwear_b_off.png'));
 }
 
 div#underwear_link:hover {
-  background-image: url('images/underwear_b_on.png');
+  background-image: url(image_path('underwear_b_on.png'));
 }
 
 div#japanese_outer {
@@ -101,8 +105,7 @@ div#japanese_inner {
   right: 20px;
   height: 47px;
   width: 233px;
-/*   background-image: url('http://www.stevenlitt.com/harold/images/japanese.jpg'); */
-  background-image: url('images/japanese2.png');
+  background-image: url(image_path('japanese2.png'));
 
 }
 
@@ -122,8 +125,7 @@ div#contact_inner {
   height: 180px;
   width: 95px;
   background-color: #000000;
-/*   cursor:pointer;   */
-  background-image: url('images/contact_off.jpg');
+  background-image: url(image_path('contact_off.jpg'));
 }
 
 div#contact_inner_text {
@@ -143,12 +145,6 @@ div#contact_inner_text a {
   font-size: 14px;
 }
 
-/*
-div#contact_inner:hover {
-  background-image: url('http://www.stevenlitt.com/harold/images/contact_on.jpg');
-}
-*/
-
 div#back_outer {
   position: absolute;
   right: 0px;
@@ -164,17 +160,17 @@ div#back_inner {
   right: 20px;
   height: 100px;
   width: 100px;
-  background-image: url('images/back_off.jpg');
+  background-image: url(image_path('back_off.jpg'));
 }
 
 div#back_inner:hover {
-  background-image: url('images/back_on.jpg');
+  background-image: url(image_path('back_on.jpg'));
 }
 
 div#loading_outer {
   position: absolute;
-  background: #000000;
   width: 100%;
+  background-color: #000000;
   height: 100%;
   z-index: 100;
 }
@@ -184,7 +180,6 @@ div#loading_inner {
   width: 650px;
   height: 22px;
   margin: -11px auto 0px auto;
-/*   background-color: #AAAAAA;   */
   top: 50%;
 }
 
@@ -282,7 +277,7 @@ div#preloader_inner {
   margin: -7px auto 0px auto;
   top: 50%;
 /*   background-color: #00FF00; */
-  background-image: url('images/preloader.png');
+  background-image: url(image_path('preloader.png'));
 }
 
 div#buttons_outer {
@@ -821,4 +816,4 @@ div.vjs-loading-spinner .ball8 { opacity: 1.00; position:absolute; left: 6px; to
 /* Subtitles Button */
 .vjs-default-skin .vjs-captions-button div { background-position: -25px -75px; }
 .vjs-default-skin .vjs-chapters-button div { background-position: -100px -75px; }
-.vjs-default-skin .vjs-chapters-button ul { width: 20em; left: -8.5em; /* Width of menu - width of button / 2 */ }}
+.vjs-default-skin .vjs-chapters-button ul { width: 20em; left: -8.5em;}
