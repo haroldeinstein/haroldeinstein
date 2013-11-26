@@ -1,0 +1,27 @@
+<%= content_for :stylesheets do %>
+  <%= stylesheet_link_tag :login %>
+<% end %>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+  <tbody>
+    <tr>
+      <td width="100%" height="100%" valign="middle">
+        <div id="login">
+          <form method="post" action="/admin">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <label class="dark" for="user_username">username</label>
+            <input class="dark" type="text" id="user_username" name="user[username]">
+            <br>
+            <label class="dark" for="user_password">password</label>
+            <input class="dark" type="password" id="user_password" name="user[password]">
+            <br>
+            <label class="dark" for="user_password_confirmation">password confirmation</label>
+            <input class="dark" type="password" id="user_password_confirmation" name="user[password_confirmation]">
+            <br>
+            <input class="btn neutral" type="submit" value="create account">
+          </form>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

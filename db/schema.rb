@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125163508) do
+ActiveRecord::Schema.define(version: 20131126153651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,5 +29,14 @@ ActiveRecord::Schema.define(version: 20131125163508) do
   end
 
   add_index "projects", ["vimeo_id"], name: "index_projects_on_vimeo_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end

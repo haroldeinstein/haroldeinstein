@@ -58,7 +58,8 @@ VideoManager.prototype = {
   makeNameEditable: function($elem) {
     var manager = this;
     var id = $elem.attr('id').split('_')[1];
-    var video = this.pManager.videos.where({vimeo_id: parseInt(id, 10)})[0];
+    var video = this.pManager.videos.where({vimeo_id:id})[0];
+    console.log(video);
     var title = video.get('title');
     var $input = $('<input class="edit-title" value=""></input>');
     $elem.replaceWith($input);

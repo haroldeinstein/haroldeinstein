@@ -33,7 +33,7 @@ class Admin::ProjectsController < Admin::AdminController
   end
 
   def fetch
-    render json: @projects.as_json
+    render json: Project.all.as_json
   end
 
   private

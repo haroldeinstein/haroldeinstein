@@ -102,7 +102,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  bcrypt-ruby (~> 3.0.0)
+  bcrypt-ruby
   jbuilder (~> 1.2)
   jquery-rails
   pg
