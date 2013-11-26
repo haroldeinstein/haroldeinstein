@@ -17,14 +17,12 @@ var imageArray = [
 
 $(document).ready(function() {
 
-  checkForiPhone();
-
   setTimeout(function() {
     $('#loading_outer').fadeOut(function() {
       $(this).hide();
     });
   }, 500)
-  /*
+
   maxPreloaderWidth = $("#loading_inner").width();
   pw = 0;
   preloadTime = 2000;
@@ -32,16 +30,8 @@ $(document).ready(function() {
   stepWidth = maxPreloaderWidth / (preloadTime / preloadStepTime);
 
   initPreloader();
-  */
 
 });
-
-function checkForiPhone()
-{
-  if((navigator.userAgent.match(/iPhone/i)) /* || (navigator.userAgent.match(/iPod/i)) */ ) {
-     window.location = "http://www.haroldeinstein.com/m";
-  }
-}
 
 function initPreloader() {
 
