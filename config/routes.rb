@@ -1,6 +1,7 @@
 Harold::Application.routes.draw do
   root 'welcome#index'
 
+  post 'sessions', to: 'sessions#create'
 
   resources 'commercials', only: ['index']
   resources 'underwear', only: ['index']

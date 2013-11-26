@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts params.to_yaml
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       login(user)
