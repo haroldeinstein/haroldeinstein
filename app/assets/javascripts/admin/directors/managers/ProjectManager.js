@@ -51,9 +51,9 @@ ProjectManager.prototype = {
 
     var model = this;
     $.ajax({
-      url: '/api/admin/projects',
+      url: '/admin/commercials',
       data: data,
-      type: 'PUT',
+      type: 'POST',
       success: function(response, status, xhr) {
         model.videos.set(response);
         if (opts && opts.success) opts.success();

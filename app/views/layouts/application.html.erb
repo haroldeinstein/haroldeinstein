@@ -5,6 +5,7 @@
   <meta name="keywords" content="Harold Einstein, Howard Einstein, Director Harold Einstein, Crest commercials, FedEx commercials, Little Caesars Commercials, Kayak Commercials, Axe Commercials, Johnnie Walker Commercials, Boston Bruins Commercials, Gushers Commercials, Target Commercials, Mike's Hard Lemonade commercials, Luvs commercials, Award-winning commercials, Famous commercials">
 
   <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= yield :stylesheets %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
@@ -44,5 +45,6 @@
 
   <%= yield %>
 
+  <%= yield :javascripts %>
 </body>
 </html>

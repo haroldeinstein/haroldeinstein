@@ -9,10 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
 
+@import "uikit/reset.scss";
 @import "uikit/base.scss";
 @import "uikit/fonts.scss";
-@import "harold.scss";
+@import "uikit/forms.scss";
+@import "uikit/layout.scss";
 @import "uikit/buttons.scss";
+@import "harold.scss";

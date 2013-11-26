@@ -1,4 +1,3 @@
-
 @import "../mixins/animate.scss";
 @import "../uikit/fonts.scss";
 
@@ -76,13 +75,13 @@
     top: 0em;
     right: 0em;
     display: none;
-    background-image: url('directors/delete.png');
+    background-image: url(image_path('delete.png'));
   }
 
   .reorder-video {
     @extend .remove-video;
     right: 2.4em;
-    background-image: url('directors/move.png');
+    background-image: url(image_path('move.png'));
   }
 
   &:hover .remove-video {

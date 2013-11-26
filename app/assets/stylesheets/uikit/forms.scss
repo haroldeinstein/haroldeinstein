@@ -1,0 +1,89 @@
+@import "../mixins/animate.scss";
+@import "../mixins/border-helper.scss";
+
+label {
+  position: relative;
+  float: left;
+  margin-bottom: 6px;
+  font-size: 23px;
+  font-weight: 500;
+
+  &.dark {
+    color: #fff;
+  }
+
+  &.light{
+    color: #000
+  }
+}
+
+input[type="text"], input[type="password"] {
+  font-size: 1.7em;
+  width: 249px;
+  height: 38px;
+  margin-bottom: 14px;
+  padding-left: 8px;
+  @include transition-duration;
+  @include border;
+
+  &:hover {
+    @include border;
+  }
+
+  &:focus {
+    @include border;
+    outline: 0;
+  }
+
+  &.dark {
+    background: #000;
+    border-color: #fff;
+    color: #fff;
+
+    &:hover {
+      border-color: #fff;
+    }
+
+    &:focus {
+      border-color: #fff;
+      @include shadow;
+    }
+  }
+
+  &.light {
+    background: white;
+    border-color: #000;
+    color: #000;
+
+    &:hover {
+      border-color: #000;
+    }
+
+    &:focus {
+      border-color: #000;
+      @include shadow;
+    }
+
+    &.no-margin {
+      margin-bottom: -1px;
+    }
+  }
+}
+
+textarea:focus {
+  outline: 0;
+  border: 1px solid #fff;
+}
+
+#rep-modal-container:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 85%;
+    right: -28px;
+    border-left: 14px solid rgba(255, 243, 42, 0.5);
+    border-right: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-top: 14px solid transparent;
+}

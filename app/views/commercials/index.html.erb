@@ -1,0 +1,71 @@
+<%= content_for :stylesheets do %>
+  <%= stylesheet_link_tag :projects %>
+<% end %>
+
+<div id="main-container">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" height="90%">
+    <tbody>
+      <tr>
+        <td valign="middle">
+          <div id="director" class="clearfix">
+            <% unless params[:vid].present? %>
+              <div id="videos-list">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+                  <tbody>
+                    <tr>
+                      <td valign="middle">
+                        <% commercials.each do |c| %>
+                          <h3 class="project large">
+                            <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="#">
+                              <%= c.title %>
+                            </a>
+                          </h3>
+                          <h3 class="project small">
+                            <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="?vid=<%= c.id %>">
+                              <%= c.title %>
+                            </a>
+                          </h3>
+                        <% end %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            <% end %>
+
+            <div id="videos-container" class="<%= "show" if params[:vid].present? %>">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+                <tbody>
+                  <tr>
+                    <td valign="middle">
+                      <div id="video-player">
+                        <% if params[:vid] %>
+                          <iframe id="vimeo-player" src="//player.vimeo.com/video/<%= @video_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                        <% end %>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="back_outer">
+    <a href="/">
+      <div id="back_inner" style="cursor:pointer;">
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<script>
+</script>
+
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag :project %>
+<% end %>
