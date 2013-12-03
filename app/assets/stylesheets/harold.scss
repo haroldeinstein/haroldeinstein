@@ -1,26 +1,35 @@
-body {
-  margin: 0px;
-  padding: 0px;
-  background: #000000;
-  font-family: Arial;
-}
-
 .hidden-images img {
   display: none;
 }
 
-div#main {
-  position: absolute;
-  margin: 0px;
-  padding: 0px;
+#main,
+#meta_black,
+#commercials_link,
+#japanese_outer,
+#japanese_inner,
+#contact_outer,
+#contact_inner_text,
+#contact_inner,
+#back_outer,
+#back_inner,
+#loading_outer,
+#links,
+#web_video,
+#ipad_video,
+#preloader,
+#buttons_outer,
+#underwear_link {
+  position: absolute
+}
+
+#main {
   width: 100%;
   height: 100%;
   min-width: 800px;
   min-height: 450px;
 }
 
-div#meta_black {
-  position: absolute;
+#meta_black {
   top: 0px;
   left: 0px;
   width: 350px;
@@ -28,7 +37,7 @@ div#meta_black {
   z-index: 100;
 }
 
-div#main_left {
+#main_left {
   position: relative;
   display: inline;
   width: 50%;
@@ -37,7 +46,7 @@ div#main_left {
   min-height: 400px;
 }
 
-div#main_right {
+#main_right {
   position: relative;
   display: inline;
   width: 50%;
@@ -46,8 +55,7 @@ div#main_right {
   min-height: 400px;
 }
 
-div#commercials_link {
-  position: absolute;
+#commercials_link {
   right: 0px;
   top: 50%;
   height: 50px;
@@ -57,12 +65,11 @@ div#commercials_link {
   background-image: url(image_path('commercials_b_off.png'));
 }
 
-div#commercials_link:hover {
+#commercials_link:hover {
   background-image: url(image_path('commercials_b_on.png'));
 }
 
-div#underwear_link {
-  position: absolute;
+#underwear_link {
   left: 0px;
   top: 50%;
   height: 50px;
@@ -72,12 +79,11 @@ div#underwear_link {
   background-image: url(image_path('underwear_b_off.png'));
 }
 
-div#underwear_link:hover {
+#underwear_link:hover {
   background-image: url(image_path('underwear_b_on.png'));
 }
 
-div#japanese_outer {
-  position: absolute;
+#japanese_outer {
   width: 100%;
   height: 150px;
   top: 0px;
@@ -85,8 +91,7 @@ div#japanese_outer {
   min-width: inherit;
 }
 
-div#japanese_inner {
-  position: absolute;
+#japanese_inner {
   top: 25px;
   right: 20px;
   height: 47px;
@@ -94,8 +99,7 @@ div#japanese_inner {
   background-image: url(image_path('japanese2.png'));
 }
 
-div#contact_outer {
-  position: absolute;
+#contact_outer {
   left: 0px;
   top: 0px;
   height: 100%;
@@ -103,8 +107,7 @@ div#contact_outer {
   min-height: inherit;
 }
 
-div#contact_inner {
-  position: absolute;
+#contact_inner {
   bottom: 0px;
   left: 20px;
   height: 180px;
@@ -113,8 +116,7 @@ div#contact_inner {
   background-image: url(image_path('contact_off.jpg'));
 }
 
-div#contact_inner_text {
-  position: absolute;
+#contact_inner_text {
   bottom: 120px;
   left: 125px;
   height: 25px;
@@ -124,14 +126,13 @@ div#contact_inner_text {
   cursor:pointer;
 }
 
-div#contact_inner_text a {
+#contact_inner_text a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 14px;
 }
 
-div#back_outer {
-  position: absolute;
+#back_outer {
   right: 0px;
   top: 0px;
   height: 100%;
@@ -139,8 +140,7 @@ div#back_outer {
   min-height: inherit;
 }
 
-div#back_inner {
-  position: absolute;
+#back_inner {
   bottom: 0px;
   right: 20px;
   height: 100px;
@@ -148,19 +148,18 @@ div#back_inner {
   background-image: url(image_path('back_off.jpg'));
 }
 
-div#back_inner:hover {
+#back_inner:hover {
   background-image: url(image_path('back_on.jpg'));
 }
 
-div#loading_outer {
-  position: absolute;
+#loading_outer {
   width: 100%;
   background-color: #000000;
   height: 100%;
   z-index: 100;
 }
 
-div#loading_inner {
+#loading_inner {
   position: relative;
   width: 650px;
   height: 22px;
@@ -168,14 +167,14 @@ div#loading_inner {
   top: 50%;
 }
 
-div#loading_bar {
+#loading_bar {
   float: left;
   height: 100%;
   background-color: #FFFFFF;
   width: 0px;
 }
 
-div#underwear_image {
+#underwear_image {
   position: relative;
   height: 640px;
   width: 900px;
@@ -184,7 +183,7 @@ div#underwear_image {
   top: 50%;
 }
 
-div#commercials {
+#commercials {
   position: relative;
   height: 450px;
   width: 900px;
@@ -194,21 +193,19 @@ div#commercials {
 }
 
 
-div#links {
-  position: absolute;
+#links {
   top: -75px;
   left: 5px;
   height: 400px;
   width: 200px;
 }
 
-div#links img {
+#links img {
   cursor: pointer;
   margin: 0px 0px 10px 0px;
 }
 
-div#web_video {
-  position: absolute;
+#web_video {
   width: 700px;
   height: 394px;
   top: 0px;
@@ -216,8 +213,7 @@ div#web_video {
   background: #000000;
 }
 
-div#ipad_video {
-  position: absolute;
+#ipad_video {
   width: 700px;
   height: 394px;
   top: 40px;
@@ -225,15 +221,14 @@ div#ipad_video {
   background: #000000;
 }
 
-div#preloader {
-  position: absolute;
+#preloader {
   width: 650px;
   height: 350px;
   top: 0px;
   left: 250px;
 }
 
-div#preloader_inner {
+#preloader_inner {
   position: relative;
   height: 15px;
   width: 200px;
@@ -242,15 +237,14 @@ div#preloader_inner {
   background-image: url(image_path('preloader.png'));
 }
 
-div#buttons_outer {
-  position: absolute;
+#buttons_outer {
   width: 650px;
   height: 75px;
   top: 395px;
   left: 250px;
 }
 
-div#buttons_inner {
+#buttons_inner {
   position: relative;
   height: 76px;
   width: 295px;
@@ -258,7 +252,7 @@ div#buttons_inner {
   margin: -38px auto 0px auto;
 }
 
-div#buttons_inner div.button {
+#buttons_inner .button {
   position: relative;
   display: inline;
   float: left;
