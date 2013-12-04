@@ -19,6 +19,13 @@
   position: absolute
 }
 
+.mobile { display: none; }
+.desktop {
+  display: table-row;
+  width: 100%;
+  height: 100%;
+}
+
 #main-outer {
   width: 100%;
   height: 100%;
@@ -248,9 +255,14 @@
 }
 
 @media screen and (max-width: 320px) {
-  /*
-    #japanese_outer { display: none; }
-    #main { min-width: inherit; }
-    #main_left, #main_right { width: 100%; height: auto; }
-  */
+  .mobile { display: block; }
+  .desktop { display: none; }
+  #japanese-outer { display: none !important; }
+  #contact-inner {
+    left: 0px;
+    background-size: 100%;
+    width: 161px;
+    height: 100px;
+  }
+  #back-outer { display: none !important; }
 }
