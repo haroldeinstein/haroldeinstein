@@ -59,7 +59,6 @@ VideoManager.prototype = {
     var manager = this;
     var id = $elem.attr('id').split('_')[1];
     var video = this.pManager.videos.where({vimeo_id:id})[0];
-    console.log(video);
     var title = video.get('title');
     var $input = $('<input class="edit-title" value=""></input>');
     $elem.replaceWith($input);
@@ -73,7 +72,7 @@ VideoManager.prototype = {
     $input.val(title).focus().bind({
       blur: function(e) {
         var $self = $(this);
-        html =  '<div style="position: relative;" class="video-title" id="p_'+ video.get('vimeo_id') +'">';
+        html =  '<div style="position: relative;" class="video-title" id="p_'+ video.get('vimeo_id') +'" data-id="'+ video.get('vimeo_id') +'">';
         html += '<h3 class="project">'+ video.get('title') +'</h3>';
         html += '<a href="#" class="reorder-video" data-id="'+ video.get('vimeo_id') +'"></a>';
         html += '<a href="#" class="remove-video" data-id="'+ video.get('vimeo_id') +'"></a>';
@@ -129,19 +128,19 @@ $(document).ready(function() {
       return;
     }
 
-    if (manager.pManager.videos.length >= 12) {
+    if (manager.pManager.videos.length >= 31) {
       alert("You've added the maximum number of videos");
       return;
     }
 
     var video = new VideoModel(manager.vManager.videos.get(id).toJSON());
 
-    video.set('vimeo_id', parseInt(id, 10));
+    video.set('vimeo_id', id);
     video.unset('id');
 
     manager.pManager.addVideo(video, {
       success: function(video) {
-        html =  '<div style="position: relative;" class="video-title" id="p_'+ video.get('vimeo_id') +'">';
+        html =  '<div style="position: relative;" class="video-title" id="p_'+ video.get('vimeo_id') +'" data-id="'+ video.get('vimeo_id') +'">';
         html += '<h3 class="project">'+ video.get('title') +'</h3>';
         html += '<a href="#" class="reorder-video" data-id="'+ video.get('vimeo_id') +'"></a>';
         html += '<a href="#" class="remove-video" data-id="'+ video.get('vimeo_id') +'"></a>';
@@ -158,7 +157,7 @@ $(document).ready(function() {
     e.preventDefault();
     var $self = $(this);
     var id = $self.attr('data-id');
-    var video = manager.pManager.videos.where({vimeo_id: parseInt(id, 10)})[0];
+    var video = manager.pManager.videos.where({vimeo_id: id})[0];
     manager.pManager.removeVideo(video, {
       success: function() {
         $self.parent('.video-title').remove();

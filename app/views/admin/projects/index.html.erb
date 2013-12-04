@@ -17,7 +17,7 @@
                   <td valign="middle">
                     <div id="videos-list">
                       <% @projects.each do |p| %>
-                        <div style="position: relative;" class="video-title" id="p_<%= p.vimeo_id %>">
+                        <div style="position: relative;" class="video-title" id="p_<%= p.vimeo_id %>" data-id="<%= p.vimeo_id %>">
                           <h3 class="project"><%= p.title %></h3>
                           <a href="#" class="reorder-video" data-id="<%= p.vimeo_id %>"></a>
                           <a href="#" class="remove-video" data-id="<%= p.vimeo_id %>"></a>

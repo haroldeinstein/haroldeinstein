@@ -31,14 +31,13 @@ ProjectManager.prototype = {
     var ids = sort.match(/(\d+)/g);
     $('#save-button').removeClass('disabled').addClass('active');
     for (var i = 0; i < ids.length; i++) {
-      var video = this.videos.where({vimeo_id: parseInt(ids[i])})[0];
+      var video = this.videos.where({vimeo_id: ids[i]})[0];
       video.set('sort_index', i);
     }
   },
 
   save: function(opts) {
     var videos = this.videos.toJSON();
-    console.log(videos.length);
     var data = {
       authenticity_token: $('meta').filter('[name="csrf-token"]').attr('content'),
       director_id: Bootstrap.director_id,

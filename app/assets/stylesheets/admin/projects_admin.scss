@@ -54,22 +54,19 @@
   box-sizing: border-box;
   @include transition-duration(0.2s);
 
-  &.selected {
-    border-left: 6px solid rgba(255, 243, 42, 1);
-  }
+  &.selected { border-left: 6px solid rgba(255, 243, 42, 1); }
 
-  img {
-    width: 100%;
-  }
+  img { width: 100%; }
 }
 
 .video-title {
   position: relative;
 
-  .remove-video {
+  &:hover { background: #222; }
+
+  .remove-video, .reorder-video {
     width: 2.4em;
     height: 2.4em;
-    margin-top: 0.7em;
     position: absolute;
     display: block;
     top: 0em;
@@ -79,12 +76,11 @@
   }
 
   .reorder-video {
-    @extend .remove-video;
     right: 2.4em;
     background-image: url(image_path('move.png'));
   }
 
-  &:hover .remove-video {
+  &:hover .remove-video, &:hover .reorder-video {
     display: block;
   }
 }
