@@ -2,31 +2,33 @@
   display: none;
 }
 
-#main,
 #meta_black,
-#commercials_link,
-#japanese_outer,
-#japanese_inner,
-#contact_outer,
-#contact_inner_text,
-#contact_inner,
-#back_outer,
-#back_inner,
-#loading_outer,
+#japanese-outer,
+#japanese-inner,
+#contact-outer,
+#contact-inner-text,
+#contact-inner,
+#back-outer,
+#back-inner,
+#loading-outer,
 #links,
 #web_video,
 #ipad_video,
 #preloader,
-#buttons_outer,
-#underwear_link {
+#buttons_outer {
   position: absolute
 }
 
-#main {
+#main-outer {
   width: 100%;
   height: 100%;
-  min-width: 800px;
-  min-height: 450px;
+  display: table;
+}
+
+#main-inner {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #meta_black {
@@ -37,61 +39,46 @@
   z-index: 100;
 }
 
-#main_left {
-  position: relative;
-  display: inline;
+#main-left, #main-right {
+  display: table-cell;
+  vertical-align: middle;
   width: 50%;
   height: 100%;
-  float: left;
-  min-height: 400px;
-}
-
-#main_right {
   position: relative;
-  display: inline;
-  width: 50%;
-  height: 100%;
-  float: left;
-  min-height: 400px;
 }
 
-#commercials_link {
-  right: 0px;
-  top: 50%;
-  height: 50px;
-  width: 280px;
-  margin: -25px 0px 0px 0px;
+#commercials-link {
   cursor:pointer;
-  background-image: url(image_path('commercials_b_off.png'));
-}
 
-#commercials_link:hover {
-  background-image: url(image_path('commercials_b_on.png'));
+  .dumb-background-image {
+    width: 330px;
+    height: 50px;
+    background-image: url(image_path('commercials_b_off.png'));
+    float: right;
+
+    &:hover { background-image: url(image_path('commercials_b_on.png')); }
+  }
 }
 
 #underwear_link {
-  left: 0px;
-  top: 50%;
-  height: 50px;
-  width: 280px;
-  margin: -25px 0px 0px 0px;
   cursor:pointer;
-  background-image: url(image_path('underwear_b_off.png'));
+
+  .dumb-background-image {
+    width: 330px;
+    height: 50px;
+    background-image: url(image_path('underwear_b_off.png'));
+    float: left;
+
+    &:hover { background-image: url(image_path('underwear_b_on.png')); }
+  }
 }
 
-#underwear_link:hover {
-  background-image: url(image_path('underwear_b_on.png'));
-}
-
-#japanese_outer {
-  width: 100%;
-  height: 150px;
+#japanese-outer {
   top: 0px;
-  left: 0px;
-  min-width: inherit;
+  right: 0px;
 }
 
-#japanese_inner {
+#japanese-inner {
   top: 25px;
   right: 20px;
   height: 47px;
@@ -99,15 +86,13 @@
   background-image: url(image_path('japanese2.png'));
 }
 
-#contact_outer {
+#contact-outer {
   left: 0px;
-  top: 0px;
-  height: 100%;
+  bottom: 0px;
   width: 310px;
-  min-height: inherit;
 }
 
-#contact_inner {
+#contact-inner {
   bottom: 0px;
   left: 20px;
   height: 180px;
@@ -116,7 +101,7 @@
   background-image: url(image_path('contact_off.jpg'));
 }
 
-#contact_inner_text {
+#contact-inner-text {
   bottom: 120px;
   left: 125px;
   height: 25px;
@@ -126,13 +111,13 @@
   cursor:pointer;
 }
 
-#contact_inner_text a {
+#contact-inner-text a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 14px;
 }
 
-#back_outer {
+#back-outer {
   right: 0px;
   top: 0px;
   height: 100%;
@@ -140,26 +125,28 @@
   min-height: inherit;
 }
 
-#back_inner {
+#back-inner {
   bottom: 0px;
   right: 20px;
   height: 100px;
   width: 100px;
   background-image: url(image_path('back_off.jpg'));
+
+  &:hover {
+    background-image: url(image_path('back_on.jpg'));
+  }
 }
 
-#back_inner:hover {
-  background-image: url(image_path('back_on.jpg'));
-}
-
-#loading_outer {
+#loading-outer {
   width: 100%;
-  background-color: #000000;
   height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #000000;
   z-index: 100;
 }
 
-#loading_inner {
+#loading-inner {
   position: relative;
   width: 650px;
   height: 22px;
@@ -167,20 +154,16 @@
   top: 50%;
 }
 
-#loading_bar {
+#loading-bar {
   float: left;
   height: 100%;
   background-color: #FFFFFF;
   width: 0px;
 }
 
-#underwear_image {
-  position: relative;
-  height: 640px;
+#underwear-image {
   width: 900px;
-  margin: -320px auto 0px auto;
-  background: #000000;
-  top: 50%;
+  margin: 0px auto;
 }
 
 #commercials {
@@ -262,4 +245,12 @@
   overflow: hidden;
   font-size: 10px;
   cursor:pointer;
+}
+
+@media screen and (max-width: 320px) {
+  /*
+    #japanese_outer { display: none; }
+    #main { min-width: inherit; }
+    #main_left, #main_right { width: 100%; height: auto; }
+  */
 }
