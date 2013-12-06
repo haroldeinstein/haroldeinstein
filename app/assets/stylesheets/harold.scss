@@ -289,18 +289,13 @@
   #commercials-container {
     display: none;
     height: 100% !important;
-    &.show {
-      display: block;
-    }
+    &.show { display: block; }
   }
   #back-outer { display: none !important; }
   .project.small {
-    &:first-child {
-      padding-top: 30px;
-    }
-    &:last-child {
-      padding-bottom: 30px;
-    }
+    &:first-child { padding-top: 30px; }
+    &:last-child { padding-bottom: 30px; }
+
     padding: 6px 0px;
     text-transform: uppercase;
     width: 100%;
@@ -309,8 +304,11 @@
     font-size: 1.2em;
   }
   .underwear  {
-    img {
-      width: 100%;
-    }
+    img { width: 100%; }
+  }
+  #contact-inner-text {
+    width: auto;
+    left: 80px;
+    bottom: 50px;
   }
 }
