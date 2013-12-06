@@ -30,6 +30,9 @@
 
   img {
     display: inline-block;
+    &.home {
+      margin-top: -20px;
+    }
   }
 }
 
