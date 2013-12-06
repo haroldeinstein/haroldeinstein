@@ -10,13 +10,16 @@
 #contact-inner,
 #back-outer,
 #back-inner,
-#loading-outer,
 #links,
 #web_video,
 #ipad_video,
 #preloader,
 #buttons_outer {
   position: absolute
+}
+
+#loading-outer {
+  position: fixed;
 }
 
 .mobile {
