@@ -29,7 +29,9 @@ $(document).ready(function() {
   preloadStepTime = 10;
   stepWidth = maxPreloaderWidth / (preloadTime / preloadStepTime);
 
-  initPreloader();
+  if ($(window).width() > 400) {
+    initPreloader();
+  }
 
 });
 
