@@ -1,7 +1,7 @@
 class Admin::ProjectsController < Admin::AdminController
   def index
     @add_action = "show videos"
-    @projects = Project.all
+    @projects = Project.sorted.all
   end
 
   def show
@@ -23,7 +23,7 @@ class Admin::ProjectsController < Admin::AdminController
       end
     end
 
-    render json: Project.all.as_json
+    render json: Project.sorted.all.as_json
   end
 
   def update
@@ -33,7 +33,7 @@ class Admin::ProjectsController < Admin::AdminController
   end
 
   def fetch
-    render json: Project.all.as_json
+    render json: Project.sorted.all.as_json
   end
 
   private
