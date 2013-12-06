@@ -6,7 +6,7 @@ class CommercialsController < ApplicationController
   private
 
   def commercials
-    Project.order('sort_index')
+    Project.all
   end
   helper_method :commercials
 end
