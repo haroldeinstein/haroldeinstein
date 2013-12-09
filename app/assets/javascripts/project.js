@@ -1,7 +1,6 @@
 function positionBtn($btn) {
   var $window = $(window);
   var windowHeight = $window.height();
-  console.log(windowHeight);
   if (windowHeight < 635) {
     $btn.css('height', '635px');
   } else {
