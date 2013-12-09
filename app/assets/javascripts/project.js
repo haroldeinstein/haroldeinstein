@@ -1,8 +1,9 @@
 function positionBtn($btn) {
   var $window = $(window);
   var windowHeight = $window.height();
-  if (windowHeight < 576) {
-    $btn.css('height', '576px');
+  console.log(windowHeight);
+  if (windowHeight < 635) {
+    $btn.css('height', '635px');
   } else {
     $btn.css('height', '100%');
   }
@@ -27,7 +28,7 @@ $(document).ready(function() {
     verticallyCenterVideo();
   });
 
-  var $btn = $('#back_outer');
+  var $btn = $('#back-outer');
 
   $window.bind('resize', function() {
     positionBtn($btn);
