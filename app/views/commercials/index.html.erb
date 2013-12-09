@@ -22,38 +22,22 @@
           <div id="director" class="clearfix">
             <% unless params[:vid].present? %>
               <div id="videos-list">
-                <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
-                  <tbody>
-                    <tr>
-                      <td valign="middle">
-                        <% commercials.each do |c| %>
-                          <h3 class="project large">
-                            <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="#">
-                              <%= c.title %>
-                            </a>
-                          </h3>
-                        <% end %>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <% commercials.each do |c| %>
+                  <h3 class="project large">
+                    <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="#">
+                      <%= c.title %>
+                    </a>
+                  </h3>
+                <% end %>
               </div>
             <% end %>
 
             <div id="videos-container" class="<%= "show" if params[:vid].present? %>">
-              <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
-                <tbody>
-                  <tr>
-                    <td valign="middle">
-                      <div id="video-player">
-                        <% if params[:vid] %>
-                          <iframe id="vimeo-player" src="//player.vimeo.com/video/<%= @vid.vimeo_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-                        <% end %>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div id="video-player">
+                <% if params[:vid] %>
+                  <iframe id="vimeo-player" src="//player.vimeo.com/video/<%= @vid.vimeo_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                <% end %>
+              </div>
             </div>
           </div>
         </td>

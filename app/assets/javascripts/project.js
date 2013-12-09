@@ -8,6 +8,12 @@ function positionBtn($btn) {
   }
 }
 
+function verticallyCenterVideo() {
+  var $container = $('#videos-container');
+  var $list = $('#videos-list');
+  $container.css('margin-top', ($list.outerHeight() / 2) - ($container.outerHeight() / 2));
+}
+
 $(document).ready(function() {
   var $window = $(window);
 
@@ -18,6 +24,7 @@ $(document).ready(function() {
     var url = "//player.vimeo.com/video/"+id;
     var iframe = $('<iframe id="vimeo-player" src="' + url + '" width="100%" height="100%" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
     $('#video-player').html(iframe);
+    verticallyCenterVideo();
   });
 
   var $btn = $('#back_outer');
