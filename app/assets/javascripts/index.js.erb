@@ -1,6 +1,9 @@
 function preloadImage(image) {
   var img = new Image();
   img.src = image;
+  img.onload = function() {
+    console.log('loaded');
+  };
 }
 
 $(document).ready(function() {
@@ -8,6 +11,10 @@ $(document).ready(function() {
     "<%= image_path "commercials_b_on.png" %>",
     "<%= image_path "underwear_b_on.png" %>"
   ];
+
+  for (var i = 0; i < imageArr.length; i++) {
+    preloadImage(imageArr[i]);
+  }
 
   setTimeout(function() {
     $('#loading-outer').fadeOut(500, function() {
