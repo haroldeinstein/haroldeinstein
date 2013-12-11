@@ -1,4 +1,13 @@
+preloadImage(image) {
+  var img = new Image();
+  img.src = image;
+}
 $(document).ready(function() {
+  var imageArr = [
+    <%= image_path "commercials_b_on.png" %>
+    <%= image_path "underwear_b_on.png" %>
+  ];
+
   setTimeout(function() {
     $('#loading-outer').fadeOut(500, function() {
       $(this).hide();
