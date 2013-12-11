@@ -11,7 +11,9 @@ function positionBtn($btn) {
 function verticallyCenterVideo() {
   var $container = $('#videos-container');
   var $list = $('#videos-list');
-  $container.css('margin-top', ($list.outerHeight() / 2) - ($container.outerHeight() / 2));
+  var marginTop = ($list.outerHeight() / 2) - ($container.outerHeight() / 2);
+  if ($(window).width() > 320)
+    $container.css('margin-top', marginTop);
 }
 
 $(document).ready(function() {

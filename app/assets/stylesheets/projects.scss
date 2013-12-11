@@ -18,13 +18,13 @@
   text-align: center;
   padding: 10px 0px;
   width: 28%;
-}
 
-#videos-list h3 {
-  padding: 5px 0px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-size: 1.1em;
+  h3 {
+    padding: 5px 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.1em;
+  }
 }
 
 h3.small {
@@ -35,7 +35,6 @@ h3.small {
   float: right;
   width: 70%;
   margin-top: 3.0em;
-  height: 44.8em;
 }
 
 #video-player {
@@ -79,6 +78,27 @@ iframe {
   }
 }
 
+
+.back {
+  position: absolute;
+  bottom: 5.0em;
+  right: 5.0em;
+}
+
+@media screen and (max-device-width: 768px) {
+  #videos-list {
+    width: 30%;
+
+    h3 {
+      font-size: 11px;
+    }
+  }
+
+  #videos-container {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 320px) {
   #director {
     padding: 0px;
@@ -98,7 +118,7 @@ iframe {
     &.show {
       display: block;
       width: 100%;
-      margin-top: 0px;
+      margin-top: 140px;
       height: 35.0em;
     }
   }
@@ -120,10 +140,3 @@ iframe {
   }
 
 }
-
-.back {
-  position: absolute;
-  bottom: 5.0em;
-  right: 5.0em;
-}
-

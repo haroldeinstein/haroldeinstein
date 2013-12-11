@@ -98,47 +98,32 @@
 }
 
 #japanese-outer {
-  top: 0px;
-  right: 0px;
-}
-
-#japanese-inner {
-  top: 25px;
+  top: 20px;
   right: 20px;
-  height: 47px;
-  width: 233px;
-  background-image: url(image_path('japanese2.png'));
 }
 
-#contact-outer {
+#contact {
+  position: absolute;
+  bottom: 0px;
   left: 0px;
-  bottom: 0px;
-  width: 310px;
-}
 
-#contact-inner {
-  bottom: 0px;
-  left: 20px;
-  height: 180px;
-  width: 95px;
-  background-color: #000000;
-  background-image: url(image_path('contact_off.jpg'));
-}
+  img { float: left; }
 
-#contact-inner-text {
-  bottom: 120px;
-  left: 125px;
-  height: 25px;
-  width: 150px;
-  background-color: #000000;
-  display: none;
-  cursor:pointer;
-}
+  .telephone {
+    width: 122px;
+    height: 180px;
+  }
 
-#contact-inner-text a {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 14px;
+  .email-address {
+    display: none;
+    margin-top: 48px;
+  }
+
+  &:hover {
+    .email-address {
+      display: block;
+    }
+  }
 }
 
 #back-outer {
@@ -271,6 +256,55 @@
   cursor:pointer;
 }
 
+// tablet
+@media screen and (max-device-width: 768px) {
+  #underwear-link {
+    .dumb-background-image {
+      margin-left: 20px;
+      width: 160px;
+      height: 18px;
+      background-size: 100%;
+    }
+  }
+
+  #commercials-link {
+    .dumb-background-image {
+      margin-left: 20px;
+      width: 160px;
+      height: 18px;
+      background-size: 100%;
+    }
+  }
+
+  #contact {
+    left: 20px;
+    .telephone {
+      width: 94px;
+      height: 139px;
+    }
+    .email-address {
+      width: 140px;
+      height: 17px;
+      margin-top: 40px;
+    }
+  }
+
+  #japanese-outer {
+    img {
+      width: 190px;
+      height: 38px;
+    }
+  }
+
+  #underwear-image {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// phone
 @media screen and (max-width: 320px) {
   .mobile {
     display: table-cell;
@@ -314,3 +348,4 @@
     bottom: 50px;
   }
 }
+

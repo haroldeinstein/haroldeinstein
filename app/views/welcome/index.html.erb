@@ -1,6 +1,5 @@
 <div id="japanese-outer">
-  <div id="japanese-inner">
-  </div>
+  <%= image_tag "japanese2.png" %>
 </div>
 
 <div id="main-outer">
@@ -27,16 +26,12 @@
   </div>
 </div>
 
-<div id="contact-outer">
-  <div id="contact-inner" onmouseover="showEmail()">
+<a href="mailto:harold.einstein@mac.com">
+  <div id="contact">
+    <%= image_tag "contact_off.jpg", class: "telephone" %>
+    <%= image_tag "harold_email.png", class: "email-address" %>
   </div>
-  <div id="contact-inner-text">
-<!-- <a href="mailto:harold.einstein@mac.com">harold.einstein@mac.com</a> -->
-  <a href="mailto:harold.einstein@mac.com">
-    <%= image_tag "harold_email.png" %>
-  </a>
-  </div>
-</div>
+</a>
 
 <div id="loading-outer">
   <div id="loading-inner">
