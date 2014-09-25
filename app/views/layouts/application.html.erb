@@ -7,7 +7,13 @@
   <meta name="viewport" content="width=device-width">
   <meta name="google-site-verification" content="x6BwNCLtAeGBzu3MD-56i2HSVeV39qkI-zGUPwKOtCQ" />
 
-  <title>HAROLD EINSTEIN</title>
+  <title>
+    <% if content_for?(:title) %>
+      <%= yield :title %>
+    <% else %>
+      HAROLD EINSTEIN
+    <% end %>
+  </title>
 
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= yield :stylesheets %>
