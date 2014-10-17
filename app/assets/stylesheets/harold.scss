@@ -132,6 +132,7 @@
   height: 100%;
   width: 150px;
   min-height: inherit;
+  z-index: 1;
 }
 
 #back-inner {
@@ -303,6 +304,11 @@
       margin: 0px auto;
     }
   }
+}
+
+#commercials-container {
+  position: relative;
+  z-index: 2;
 }
 
 // phone
