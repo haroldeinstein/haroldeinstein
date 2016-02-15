@@ -3,15 +3,15 @@ development:
   encoding: unicode
   database: harold_development
   pool: 5
-  username: Mike
-  password: pudge
+  username: mikekavouras
+  password:
 
 test:
   adapter: postgresql
   encoding: unicode
   database: harold_test
   pool: 5
-  username: Mike
+  username: mikekavouras
   password:
 
 production:
