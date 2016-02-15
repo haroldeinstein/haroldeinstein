@@ -18,6 +18,7 @@ class Admin::ProjectsController < Admin::AdminController
       if p["delete"]
         proj.destroy
       else
+        p.permit!
         proj.attributes = p
         proj.save
       end
