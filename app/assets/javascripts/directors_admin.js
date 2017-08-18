@@ -128,11 +128,6 @@ $(document).ready(function() {
       return;
     }
 
-    if (manager.pManager.videos.length > 35) {
-      alert("You've added the maximum number of videos");
-      return;
-    }
-
     var video = new VideoModel(manager.vManager.videos.get(id).toJSON());
 
     video.set('vimeo_id', id);

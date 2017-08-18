@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20131204154330) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "projects", force: true do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.string   "video_url"
     t.string   "vimeo_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20131204154330) do
 
   add_index "projects", ["vimeo_id"], name: "index_projects_on_vimeo_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
     t.datetime "created_at"
