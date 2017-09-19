@@ -91,9 +91,7 @@ VideoManager.prototype = {
   updateSelectedVideos: function() {
     var ids = this.pManager.videos.pluck('vimeo_id');
 
-    for (var i = 0; i < ids.length; i++) {
-      $('#'+ids[i]).addClass('selected');
-    }
+    ids.forEach(function(id) { $('#'+id).addClass('selected') });
   }
 };
 
@@ -123,8 +121,10 @@ $(document).ready(function() {
     var $self = $(this);
     var id = $self.attr('data-id');
 
-    if (manager.pManager.videos.where({vimeo_id: parseInt(id, 10)}).length > 0) {
-      alert("That video is already selected");
+    var ids = manager.pManager.videos.map(function(video) {
+      return video.get('vimeo_id');
+    });
+    if (ids.indexOf(id) !== -1) {
       return;
     }
 
