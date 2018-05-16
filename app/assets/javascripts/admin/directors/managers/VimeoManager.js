@@ -6,15 +6,17 @@ function VimeoManager(opts) {
 }
 
 VimeoManager.prototype = {
-  prepareVideoData: function(v) {
+  prepareVideoData: function(video) {
+    var videoId = parseInt(RegExp(/(\d+)$/).exec(video.link), 10)
+    var pictures = video.pictures.sizes
     var obj = {
-      title: v.title,
-      video_url: v.url,
-      vimeo_id: v.id,
-      id: v.id,
-      thumbnail_small: v.thumbnail_small,
-      thumbnail_medium: v.thumbnail_medium,
-      thumbnail_large: v.thumbnail_large
+      title: video.name,
+      video_url: video.link,
+      vimeo_id: videoId,
+      id: videoId,
+      thumbnail_small: pictures[0].link,
+      thumbnail_medium: pictures[1].link,
+      thumbnail_large: pictures[pictures.length - 1].link
     }
     return obj;
   },
@@ -23,21 +25,24 @@ VimeoManager.prototype = {
     var manager = this;
 
     $.ajax({
-      url: 'http://vimeo.com/api/v2/' + Bootstrap.username + '/videos.json?page=' + this.page,
+      url: 'https://api.vimeo.com/me/videos?fields=link,pictures.sizes,name&page=' + this.page,
       type: 'GET',
-      dataType: 'jsonp',
-      success: function(response, status, xhr) {
-        var videos = [];
-        for (var i = 0; i < response.length; i++) {
-          var video = manager.prepareVideoData(response[i]);
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer a3c8001045d4bb14adebc7bf60dff395');
+      },
+      success: function (response) {
+        console.log(response)
+        var videos = response.data.map(function(video) {
+          return manager.prepareVideoData(video);
+        })
+        videos.forEach(function(video) {
           var model = new VideoModel(video);
-          videos.push(video);
           manager.videos.add(model);
-        }
+        })
         opts.onFetch(videos);
       },
-      error: function(response, status, xhr) {
-
+      error: function (e) {
+        console.log(e)
       }
     });
   },
