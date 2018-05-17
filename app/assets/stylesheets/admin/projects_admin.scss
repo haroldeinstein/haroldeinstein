@@ -6,6 +6,11 @@
 }
 
 #director {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
   @include transition-duration(0.2s);
 
   &.open {
@@ -15,9 +20,7 @@
 
 #videos-list-container {
   width: 30%;
-  height: 100%;
   padding-bottom: 8px;
-  float: left;
   text-align: center;
 
   a {

@@ -8,8 +8,7 @@
 #contact-outer,
 #contact-inner-text,
 #contact-inner,
-#back-outer,
-#back-inner,
+.back-inner,
 #links,
 #web_video,
 #ipad_video,
@@ -126,25 +125,22 @@
   }
 }
 
-#back-outer {
-  right: 0px;
-  top: 0px;
-  height: 100%;
-  width: 150px;
-  min-height: inherit;
-  z-index: 2;
-}
-
-#back-inner {
+.back-inner {
   bottom: 0px;
   right: 20px;
-  height: 100px;
-  width: 100px;
-  background-image: url(image_path('back_off.jpg'));
+  display: block;
+  z-index: 3;
 
-  &:hover {
-    background-image: url(image_path('back_on.jpg'));
+  > div {
+    background-image: url(image_path('back_off.jpg'));
+    height: 100px;
+    width: 100px;
+
+    &:hover {
+      background-image: url(image_path('back_on.jpg'));
+    }
   }
+
 }
 
 #loading-outer {
@@ -306,9 +302,13 @@
   }
 }
 
-#commercials-container {
+.commercials-container {
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 // phone

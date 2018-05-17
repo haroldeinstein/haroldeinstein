@@ -19,42 +19,32 @@
     </div>
   <% end %>
 
-  <table class="<%= "show" if @vid.present? %>" id="commercials-container" cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
-    <tbody>
-      <tr>
-        <td valign="middle">
-          <div id="director" class="clearfix">
-            <% unless params[:vid].present? %>
-              <div id="videos-list">
-                <% commercials.each do |c| %>
-                  <h3 class="project large">
-                    <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="#">
-                      <%= c.title %>
-                    </a>
-                  </h3>
-                <% end %>
-              </div>
-            <% end %>
-
-            <div id="videos-container" class="<%= "show" if params[:vid].present? %>">
-              <div id="video-player">
-                <% if params[:vid] %>
-                  <iframe id="vimeo-player" src="//player.vimeo.com/video/<%= @vid.vimeo_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div id="back-outer">
-    <a href="/">
-      <div id="back-inner" style="cursor:pointer;">
+  <div class="commercials-container <%= "show" if @vid.present? %>">
+    <% unless params[:vid].present? %>
+      <div id="videos-list">
+        <% commercials.each do |c| %>
+          <h3 class="project large">
+            <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="#">
+              <%= c.title %>
+            </a>
+          </h3>
+        <% end %>
       </div>
-    </a>
+    <% end %>
+
+    <div id="videos-container" class="<%= "show" if params[:vid].present? %>">
+      <div id="video-player">
+        <% if params[:vid] %>
+          <iframe id="vimeo-player" src="//player.vimeo.com/video/<%= @vid.vimeo_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+        <% end %>
+      </div>
+    </div>
   </div>
+
+  <a class="back-inner" href="/">
+    <div style="cursor:pointer;">
+    </div>
+  </a>
 
 <div id="loading-outer">
   <div id="loading-inner">
