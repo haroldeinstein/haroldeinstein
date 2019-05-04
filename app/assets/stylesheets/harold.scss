@@ -24,7 +24,6 @@
 .mobile {
   display: none;
   vertical-align: middle;
-  height: 100%;
   text-align: center;
 
   img {
@@ -328,7 +327,7 @@
     width: 161px;
     height: 100px;
   }
-  #commercials-container {
+  .commercials-container {
     display: none;
     height: 100% !important;
     &.show { display: block; }
