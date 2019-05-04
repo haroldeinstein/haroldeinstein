@@ -306,13 +306,12 @@
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: center;
   justify-content: center;
   height: 100%;
 }
 
 // phone
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   .mobile {
     display: table-cell;
     width: 100%;

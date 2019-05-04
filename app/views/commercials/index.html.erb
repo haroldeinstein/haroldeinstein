@@ -21,14 +21,16 @@
 
   <div class="commercials-container <%= "show" if @vid.present? %>">
     <% unless params[:vid].present? %>
-      <div id="videos-list">
-        <% commercials.each do |c| %>
-          <h3 class="project large">
-            <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="#">
-              <%= c.title %>
-            </a>
-          </h3>
-        <% end %>
+      <div class="videos-list-wrapper">
+        <div id="videos-list">
+          <% commercials.each do |c| %>
+            <h3 class="project large">
+              <a data-vimeoid="<%= c.vimeo_id %>" data-id="<%= c.id %>" href="#">
+                <%= c.title %>
+              </a>
+            </h3>
+          <% end %>
+        </div>
       </div>
     <% end %>
 
@@ -46,13 +48,12 @@
     </div>
   </a>
 
-<div id="loading-outer">
-  <div id="loading-inner">
-    <div id="loading-bar">
+  <div id="loading-outer">
+    <div id="loading-inner">
+      <div id="loading-bar">
+      </div>
     </div>
   </div>
-</div>
-
 </div>
 
 <%= content_for :javascripts do %>
