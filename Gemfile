@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
+ruby '3.0.1'
 
-gem 'rails', '5.1.4'
-ruby '2.4.2'
+
+gem 'rails', '6.1.3.1'
 gem 'pg'
 gem 'rails_12factor'
 gem 'sprockets', '~>3.7.2'
+gem 'puma', '~> 5.2'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'uglifier'
-end
+gem 'sassc-rails'
+gem 'uglifier'
 
 gem 'jquery-rails'
 gem 'awesome_print'
