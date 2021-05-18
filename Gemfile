@@ -6,7 +6,7 @@ gem 'rails', '6.1.3.1'
 gem 'pg'
 gem 'rails_12factor'
 gem 'sprockets', '~>3.7.2'
-gem 'puma', '~> 5.2'
+gem 'puma', '~> 5.3'
 
 gem 'sassc-rails'
 gem 'uglifier'
